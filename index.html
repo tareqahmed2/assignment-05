@@ -9,72 +9,307 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
-    <!-- link with style .css -->
-    <link rel="stylesheet" href="styles/style.css" />
+
     <!-- link with tailwind css -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- link with style .css -->
+    <link rel="stylesheet" href="styles/style.css" />
 </head>
 
 <body>
-    <header class="bg-[#F9F7F3] pt-6 mb-20 pb-14 sticky">
+    <header id="header" class="sticky top-0 z-50 backdrop-blur-sm">
         <!-- navbar start here -->
-        <div class="navbar w-11/12 mx-auto">
-            <div class="navbar-start">
-                <button class="btn bg-[#B4F461] text-[#111111] font-bold text-xl">
-            Blog
-          </button>
-            </div>
-            <div class="navbar-center gap-1 md:gap-4">
-                <img src="assets/logo.png" alt="" />
-                <a class="text-[14px] hidden md:block md:text-xl font-bold">
-            Donate Bangladesh</a
-          >
-        </div>
-        <div class="navbar-end gap-1 md:gap-3">
-          <img src="assets/coin.png" alt="" />
-          <a class="text-[14px] md:text-xl font-bold"> 5500 BDT</a>
-            </div>
-        </div>
-    </header>
-    <main class="bg-[#FFFFFF]">
-        <!-- button sectoin -->
-        <div class=" w-11/12 mx-auto">
-            <div class="flex justify-center gap-1 md:gap-4 mb-20">
-                <button class="px-4 md:px-8 py-3 md:py-4 rounded-xl bg-[#B4F461] text-[#111111] font-bold text-xl">
-                Donation
-              </button>
-                <button class="px-8 py-4 rounded-xl border text-[#111111] font-bold text-xl">
-                History
-              </button>
-            </div>
-            <!-- hero section -->
-            <section>
-                <div class="flex justify-center w-11/12
-                 border p-8 rounded-xl mx-auto">
-                    <div class="flex flex-col flex-1 gap-8 lg:flex-row">
-                        <img src="assets/noakhali.png" class=" rounded-lg flex-1 shadow-2xl" />
-                        <div class="flex-1">
-
-                            <div class=" w-1/3
-                             md:w-1/4 p-2 mb-4 rounded-lg bg-[#1111110D]  flex justify-start  gap-1 md:gap-2">
-                                <img src="assets/coin.png" alt="" />
-                                <a class="text-[14px] md:text-xl font-bold">0 BDT</a>
-                            </div>
-
-
-                            <h1 class="text-xl text-[#111111] font-bold">Donate for Flood at Noakhali, Bangladesh</h1>
-                            <p class="py-6">
-                                The recent floods in Noakhali have caused significant damage to homes infrastructure. Your donation will help provide essential supplies and to those affected by this disaster. Every contribution, big or small, makes difference. Please join us in supporting
-                                the relief efforts and making a positive impact on the lives of those in need.
-                            </p>
-                            <button class="btn w-full font-bold text-xl bg-[#B4F461]">Donate Now</button>
-                        </div>
-                    </div>
+        <div class="bg-gray-50 pt-6 pb-10 mb-10 top-0 z-50 backdrop-blur-sm">
+            <div class="navbar w-11/12 mx-auto">
+                <div class="navbar-start">
+                    <button id="blog-btn" class="btn bg-[#B4F461] text-[#111111] font-bold text-xl">
+              Blog
+            </button>
                 </div>
-            </section>
-    </main>
-    <footer></footer>
-</body>
+                <div class="navbar-center gap-1 md:gap-4">
+                    <img src="assets/logo.png" alt="" />
+                    <a class="text-[14px] hidden md:block md:text-xl font-bold">
+              Donate Bangladesh</a
+            >
+          </div>
+          <div class="navbar-end gap-1 md:gap-3">
+            <img src="assets/coin.png" alt="" />
+            <a id="initial-money" class="text-[14px] md:text-xl font-bold">
+              5500 BDT</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- button sectoin -->
 
+      <div class="flex justify-center gap-1 md:gap-4">
+        <button
+          id="donation-section-btn"
+          class="px-4 md:px-8 py-3 md:py-4 border rounded-xl bg-[#B4F461] text-[#111111] font-bold text-xl"
+        >
+          Donation
+        </button>
+        <button
+          id="history"
+          class="px-8 py-4 rounded-xl border text-[#111111] font-bold text-xl"
+        >
+          History
+        </button>
+      </div>
+      <div class="divider"></div>
+    </header>
+    <main  class="bg-[#FFFFFF]">
+      <div class="w-11/12 mx-auto">
+        <!-- hero section1 -->
+        <section id="donation-all-section">
+          <div
+            id="modal"
+            class="flex justify-center w-11/12 border p-8 rounded-xl mx-auto"
+          >
+            <div class="flex flex-col flex-1 gap-8 lg:flex-row">
+              <img
+                src="assets/noakhali.png"
+                class="rounded-lg flex-1 shadow-2xl"
+              />
+              <div class="flex-1">
+                <button
+                  class="p-2 mb-4 rounded-lg bg-[#1111110D] flex justify-start gap-1 md:gap-2"
+                >
+                  <img src="assets/coin.png" alt="" />
+                  <a
+                    id="total-donation-money"
+                    class="text-[14px] md:text-xl font-bold"
+                    >0 BDT</a
+                  >
+                </button>
+
+                <h1
+                  id="donation-title"
+                  class="text-xl text-[#111111] font-bold"
+                >
+                  Donate for Flood at Noakhali, Bangladesh
+                </h1>
+                <p class="py-6">
+                  The recent floods in Noakhali have caused significant damage
+                  to homes infrastructure. Your donation will help provide
+                  essential supplies and to those affected by this disaster.
+                  Every contribution, big or small, makes difference. Please
+                  join us in supporting the relief efforts and making a positive
+                  impact on the lives of those in need.
+                </p>
+                <input
+                  id="donation-input"
+                  class="w-full mb-2 input input-bordered"
+                  type="text"
+                  placeholder="Write Donation Amount"
+                />
+                <!-- added modal button -->
+                <!-- Open the modal using ID.showModal() method -->
+                <button
+                  id="donation-button"
+                  class="btn w-full font-bold text-xl bg-[#B4F461]"
+                >
+                  Donate Now
+                </button>
+                <dialog id="my_modal_1" class="modal">
+                  <div
+                    class="modal-box flex flex-col justify-center items-center"
+                  >
+                    <h3 class="text-lg font-bold">Congrates!</h3>
+                    <img src="assets/coin.png" alt="" />
+                    <p class="py-4 text-center">
+                      You have Donated for Humankind <br />
+                      <span class="text-xl font-bold text-center"
+                        >Successfully</span
+                      >
+                    </p>
+                    <div class="modal-action">
+                      <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close confirmation</button>
+                      </form>
+                    </div>
+                  </div>
+                </dialog>
+              </div>
+            </div>
+          </div>
+        </section>
+<!-- hero 2 -->
+        <section id="donation-all-section">
+            <div
+              id="modal"
+              class="flex justify-center w-11/12 border p-8 rounded-xl mx-auto"
+            >
+              <div class="flex flex-col flex-1 gap-8 lg:flex-row">
+                <img
+                  src="assets/noakhali.png"
+                  class="rounded-lg flex-1 shadow-2xl"
+                />
+                <div class="flex-1">
+                  <button
+                    class="p-2 mb-4 rounded-lg bg-[#1111110D] flex justify-start gap-1 md:gap-2"
+                  >
+                    <img src="assets/coin.png" alt="" />
+                    <a
+                      id="total-donation-money"
+                      class="text-[14px] md:text-xl font-bold"
+                      >0 BDT</a
+                    >
+                  </button>
+  
+                  <h1
+                    id="donation-title"
+                    class="text-xl text-[#111111] font-bold"
+                  >
+                    Donate for Flood at Noakhali, Bangladesh
+                  </h1>
+                  <p class="py-6">
+                    The recent floods in Noakhali have caused significant damage
+                    to homes infrastructure. Your donation will help provide
+                    essential supplies and to those affected by this disaster.
+                    Every contribution, big or small, makes difference. Please
+                    join us in supporting the relief efforts and making a positive
+                    impact on the lives of those in need.
+                  </p>
+                  <input
+                    id="donation-input"
+                    class="w-full mb-2 input input-bordered"
+                    type="text"
+                    placeholder="Write Donation Amount"
+                  />
+                  <!-- added modal button -->
+                  <!-- Open the modal using ID.showModal() method -->
+                  <button
+                    id="donation-button"
+                    class="btn w-full font-bold text-xl bg-[#B4F461]"
+                  >
+                    Donate Now
+                  </button>
+                  <dialog id="my_modal_1" class="modal">
+                    <div
+                      class="modal-box flex flex-col justify-center items-center"
+                    >
+                      <h3 class="text-lg font-bold">Congrates!</h3>
+                      <img src="assets/coin.png" alt="" />
+                      <p class="py-4 text-center">
+                        You have Donated for Humankind <br />
+                        <span class="text-xl font-bold text-center"
+                          >Successfully</span
+                        >
+                      </p>
+                      <div class="modal-action">
+                        <form method="dialog">
+                          <!-- if there is a button in form, it will close the modal -->
+                          <button class="btn">Close confirmation</button>
+                        </form>
+                      </div>
+                    </div>
+                  </dialog>
+                </div>
+              </div>
+            </div>
+          </section>
+
+<!-- hero 3 -->
+<section id="donation-all-section">
+    <div
+      id="modal"
+      class="flex justify-center w-11/12 border p-8 rounded-xl mx-auto"
+    >
+      <div class="flex flex-col flex-1 gap-8 lg:flex-row">
+        <img
+          src="assets/noakhali.png"
+          class="rounded-lg flex-1 shadow-2xl"
+        />
+        <div class="flex-1">
+          <button
+            class="p-2 mb-4 rounded-lg bg-[#1111110D] flex justify-start gap-1 md:gap-2"
+          >
+            <img src="assets/coin.png" alt="" />
+            <a
+              id="total-donation-money"
+              class="text-[14px] md:text-xl font-bold"
+              >0 BDT</a
+            >
+          </button>
+
+          <h1
+            id="donation-title"
+            class="text-xl text-[#111111] font-bold"
+          >
+            Donate for Flood at Noakhali, Bangladesh
+          </h1>
+          <p class="py-6">
+            The recent floods in Noakhali have caused significant damage
+            to homes infrastructure. Your donation will help provide
+            essential supplies and to those affected by this disaster.
+            Every contribution, big or small, makes difference. Please
+            join us in supporting the relief efforts and making a positive
+            impact on the lives of those in need.
+          </p>
+          <input
+            id="donation-input"
+            class="w-full mb-2 input input-bordered"
+            type="text"
+            placeholder="Write Donation Amount"
+          />
+          <!-- added modal button -->
+          <!-- Open the modal using ID.showModal() method -->
+          <button
+            id="donation-button"
+            class="btn w-full font-bold text-xl bg-[#B4F461]"
+          >
+            Donate Now
+          </button>
+          <dialog id="my_modal_1" class="modal">
+            <div
+              class="modal-box flex flex-col justify-center items-center"
+            >
+              <h3 class="text-lg font-bold">Congrates!</h3>
+              <img src="assets/coin.png" alt="" />
+              <p class="py-4 text-center">
+                You have Donated for Humankind <br />
+                <span class="text-xl font-bold text-center"
+                  >Successfully</span
+                >
+              </p>
+              <div class="modal-action">
+                <form method="dialog">
+                  <!-- if there is a button in form, it will close the modal -->
+                  <button class="btn">Close confirmation</button>
+                </form>
+              </div>
+            </div>
+          </dialog>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+            <!-- transitoin history -->
+
+        <section>
+          <div id="transition-history" class="">
+            
+          </div>
+        </section>
+
+      
+    </main>
+
+    <footer></footer>
+    <script src="js/blog.js"></script>
+    <script src="js/donatemoney.js"></script>
+    <script src="js/utilites.js"></script>
+
+    <script src="js/history.js"></script>
+    <script src="js/donationbtn.js"></script>
+  </body>
 </html>
