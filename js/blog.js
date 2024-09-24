@@ -1,4 +1,5 @@
 const blogBtn = document.getElementById("blog-btn");
-blogBtn.addEventListener("click", function () {
-  window.location.href = "/home.html";
+blogBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  window.location.href = "./home.html";
 });
