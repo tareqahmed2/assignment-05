@@ -50,7 +50,7 @@ donationButton.addEventListener("click", function () {
     document.getElementById("transition-title").innerText = "";
     newEntry.innerHTML = `
    <div class="w-11/12 mx-auto shadow-2xl p-8 rounded-md mb-4">
-    <p>${inputValue} ${innerTextOfDonationTitle}</p>
+    <p>${inputValue} tk ${innerTextOfDonationTitle}</p>
     <p>Date: ${currentDateTime}</p>
     </div>`;
     transitionHistory.appendChild(newEntry);
