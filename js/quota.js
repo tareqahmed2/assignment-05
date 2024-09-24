@@ -25,6 +25,7 @@ donationButton3.addEventListener("click", function () {
     alert("Invalid Input");
     return;
   } else {
+    alert(`you are going to donate ${inputValue3} tk`);
     const newInitialMoney = initialMoney - inputValue3;
     const newTotalMoney = initialTotalMoney3 + inputValue3;
     initialMoneyElement.innerText = `${newInitialMoney} BDT`;
@@ -47,7 +48,7 @@ donationButton3.addEventListener("click", function () {
       timeZone: "Asia/Dhaka",
       hour13: false,
     };
-
+    document.getElementById("transition-title").innerText = "";
     newEntry.innerHTML = `
      <div class="w-11/12 mx-auto shadow-2xl p-8 rounded-md mb-4">
       <p>${inputValue3} ${innerTextOfDonationTitle}</p>
