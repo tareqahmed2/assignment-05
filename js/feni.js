@@ -20,7 +20,8 @@ donationButton2.addEventListener("click", function () {
     isNaN(inputValue2) ||
     inputValue2 < 0 ||
     initialMoney <= 0 ||
-    inputValue2 > initialMoney
+    inputValue2 > initialMoney ||
+    inputValue2 === 0
   ) {
     alert("Invalid Input");
     return;
